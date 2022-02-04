@@ -6,29 +6,24 @@ import {
   ScriptLoadStatus
 } from './MicroFrontEnd.models';
 
-export const loadMicroFrontEndJss = (
-  microFrontEndInfo: IMicroFrontEndInfo,
-  manifest: any,
-  updateData: (data: any) => void
-) => {
+export const loadMicroFrontEndJss = (microFrontEndInfo: IMicroFrontEndInfo, manifest: any) => {
   const script = document.createElement('script');
   script.id = microFrontEndInfo.jsScriptName;
   document.head.appendChild(script);
-  script.onload = () => updateData({ scriptLoadStatus: ScriptLoadStatus.Success });
+  script.onload = () => {
+    let mountEvent = window[microFrontEndInfo.mountEventName];
+    console.log(mountEvent);
+    loadMicroFrontEnd(microFrontEndInfo);
+  };
   script.onerror = () => {
-    updateData({
-      scriptLoadStatus: ScriptLoadStatus.Failure,
-      error: 'Error in loading microfront end manifest script file'
-    });
+    microFrontEndInfo.onLoadError &&
+      microFrontEndInfo.onLoadError('Error in loading microfront end manifest script file');
+    console.log('Error in loading microfront end manifest script file');
   };
   script.src = getMainJSFilePath(microFrontEndInfo.hostUrl, manifest);
 };
 
-export const loadMicroFrontEndCSS = (
-  microFrontEndInfo: IMicroFrontEndInfo,
-  manifest: any,
-  updateData: (data: any) => void
-) => {
+export const loadMicroFrontEndCSS = (microFrontEndInfo: IMicroFrontEndInfo, manifest: any) => {
   var head = document.getElementsByTagName('head')[0];
   var link = document.createElement('link');
   link.id = microFrontEndInfo.cssScriptName;
@@ -49,68 +44,66 @@ export const getMainCSSFilePath = (hostUrl: string, manifest: any) => {
     : `${hostUrl}${manifest[MICROFONTEND_RESOURCES.MAIN_CSS]}`;
 };
 
-export const getMicroFrontEndDetails = (hostName: string, hostUrl: string) => {
+export const getMicroFrontEndDetails = (props: IMicroFrontEndProps) => {
   const scriptId = (new Date().getUTCMilliseconds() + Math.floor(Math.random() * 1000)).toString();
   let microFrontEndInfo: IMicroFrontEndInfo = {
-    hostName: hostName,
-    hostUrl: hostUrl,
+    hostName: props.hostName,
+    hostUrl: props.hostUrl,
     scriptId: scriptId,
     scriptLoadStatus: ScriptLoadStatus.NotStarted,
-    assetFile: `${hostUrl}/asset-manifest.json`,
-    mountEventName: `render${hostName}`,
-    unmountEventName: `unmount${hostName}`,
-    containerName: `${hostName}-container`,
-    jsScriptName: `micro-frontend-script-${hostName}-${scriptId}`,
-    cssScriptName: `micro-frontend-css-${hostName}-${scriptId}`
+    assetFile: `${props.hostUrl}/asset-manifest.json`,
+    mountEventName: `render${props.hostName}`,
+    unmountEventName: `unmount${props.hostName}`,
+    containerName: `${props.hostName}-container`,
+    jsScriptName: `micro-frontend-script-${props.hostName}-${scriptId}`,
+    cssScriptName: `micro-frontend-css-${props.hostName}-${scriptId}`,
+    history: props.history,
+    data: props.data,
+    notify: props.notify,
+    onLoadError: props.onLoadError,
+    userInfo: props.userInfo
   };
   return microFrontEndInfo;
 };
 
-export const loadMicroFrontEndManifest = async (
-  microFrontEndInfo: IMicroFrontEndInfo,
-  updateData: (data: any) => void
-) => {
+export const loadMicroFrontEndManifest = async (microFrontEndInfo: IMicroFrontEndInfo) => {
   fetch(microFrontEndInfo.assetFile)
     .then((res) => {
-      return res.ok
-        ? res.json()
-        : updateData({ error: 'Error in loading microfront end manifest file' });
+      return res.ok ? res.json() : undefined;
     })
     .then((manifest) => {
-      loadMicroFrontEndJss(microFrontEndInfo, manifest, updateData);
-      loadMicroFrontEndCSS(microFrontEndInfo, manifest, updateData);
+      loadMicroFrontEndJss(microFrontEndInfo, manifest);
+      loadMicroFrontEndCSS(microFrontEndInfo, manifest);
     })
-    .catch(() => updateData({ error: 'Error in loading microfront end manifest file' }));
+    .catch(() => {
+      console.error('Error in loading microfront end manifest file');
+      microFrontEndInfo.onLoadError &&
+        microFrontEndInfo.onLoadError('Error in loading microfront end manifest file');
+    });
 };
 
-export const loadMicroFrontEnd = (props: IMicroFrontEndProps, state: IMicroFrontEndInfo) => {
-  if (state && state.scriptLoadStatus === ScriptLoadStatus.Success) {
+export const loadMicroFrontEnd = (state: IMicroFrontEndInfo) => {
+  if (state) {
     if (window[state.mountEventName]) {
       let contextData: IMicroFrontEndContext = {
         history: history,
-        userInfo: props.userInfo,
-        data: props.data,
-        notify: props.notify
+        userInfo: state.userInfo,
+        data: state.data,
+        notify: state.notify
       };
       window[state.mountEventName](state.containerName, contextData);
     } else {
-      props.onLoadError && props.onLoadError(state.error!);
+      state.onLoadError &&
+        state.onLoadError(
+          `Mount method is not provided for the [Microfrontend: ${state.hostName}]`
+        );
       console.error(`Mount method is not provided for the [Microfrontend: ${state.hostName}]`);
     }
-  } else if (state.error) {
-    props.onLoadError && props.onLoadError(state.error!);
-    console.error(state.error);
   }
 };
 
 export const unloadMicroFrontEnd = (props: IMicroFrontEndProps, state: IMicroFrontEndInfo) => {
-  if (state.scriptLoadStatus === ScriptLoadStatus.Success) {
-    if (window[state.unmountEventName]) window[state.unmountEventName](state.containerName);
-    // UnMount methd is not provided by microfrontend.
-    else {
-      console.error(`UnMount method is not provided for the [Microfrontend: ${state.hostName}]`);
-    }
-  }
+  if (window[state.unmountEventName]) window[state.unmountEventName](state.containerName);
   //if javascript script is added to main html removing the same
   const jssElement: any = document.getElementById(state.jsScriptName);
   if (jssElement) {

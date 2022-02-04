@@ -19,7 +19,7 @@ export const useInit = (props: IMicroFrontEndProps) => {
   useEffect(() => {
     let microFrontEndInfo = actions.initialize(props);
     async function init() {
-      await loadMicroFrontEndManifest(microFrontEndInfo, actions.updateData);
+      await loadMicroFrontEndManifest(microFrontEndInfo);
     }
     init();
     return unmountMicroFrontEnd;
@@ -30,10 +30,7 @@ export const useInit = (props: IMicroFrontEndProps) => {
 const microFrontEndActions = (dispatch: any, state: IMicroFrontEndInfo) => {
   const actions: IMicroFrontEndActions = {
     initialize: (props: IMicroFrontEndProps) => {
-      const initialData: IMicroFrontEndInfo = getMicroFrontEndDetails(
-        props.hostName,
-        props.hostUrl
-      );
+      const initialData: IMicroFrontEndInfo = getMicroFrontEndDetails(props);
       dispatch({ type: MICRO_FRONTEND_ACTIONS.INITIALIZE, data: initialData });
       return initialData;
     },

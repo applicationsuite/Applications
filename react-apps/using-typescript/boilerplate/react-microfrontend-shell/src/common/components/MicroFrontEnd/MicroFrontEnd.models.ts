@@ -26,9 +26,7 @@ export interface IMicroFrontEndContext {
   notify?: (data: any) => void;
 }
 
-export interface IMicroFrontEndInfo {
-  hostUrl: string;
-  hostName: string;
+export interface IMicroFrontEndInfo extends IMicroFrontEndProps {
   scriptId: string;
   scriptLoadStatus: ScriptLoadStatus;
   assetFile: string;
