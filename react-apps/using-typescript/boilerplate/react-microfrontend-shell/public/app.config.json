@@ -1,0 +1,10 @@
+{
+  "hosts": [
+    {
+      "name": "ModuleName",
+      "path": "/ModuleName",
+      "url": "http://localhost:5000",
+      "isAvailable": true
+    }
+  ]
+}

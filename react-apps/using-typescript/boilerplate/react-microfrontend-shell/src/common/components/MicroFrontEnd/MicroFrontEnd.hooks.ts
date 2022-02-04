@@ -1,15 +1,28 @@
 import { useEffect, useReducer } from 'react';
 import { microFrontEndReducer } from './MicroFrontEnd.reducers';
 import { MICRO_FRONTEND_ACTIONS, IMicroFrontEndActions } from './MicroFrontEnd.actions';
-import { IMicroFrontEndProps, IMicroFrontEndInfo } from './MicroFrontEnd.models';
-import { getMicroFrontEndDetails } from './MicroFrontEnd.utils';
+import { IMicroFrontEndProps, IMicroFrontEndInfo, ScriptLoadStatus } from './MicroFrontEnd.models';
+import {
+  getMicroFrontEndDetails,
+  loadMicroFrontEndManifest,
+  unloadMicroFrontEnd
+} from './MicroFrontEnd.utils';
 
 export const useInit = (props: IMicroFrontEndProps) => {
   const [state, dispatch] = useReducer(microFrontEndReducer, {});
   const actions = microFrontEndActions(dispatch, state) as IMicroFrontEndActions;
 
+  const unmountMicroFrontEnd = () => {
+    unloadMicroFrontEnd(props, state);
+  };
+
   useEffect(() => {
-    actions.initialize(props);
+    let microFrontEndInfo = actions.initialize(props);
+    async function init() {
+      await loadMicroFrontEndManifest(microFrontEndInfo, actions.updateData);
+    }
+    init();
+    return unmountMicroFrontEnd;
   }, [props]);
   return { state: state as IMicroFrontEndInfo, actions };
 };
@@ -18,8 +31,8 @@ const microFrontEndActions = (dispatch: any, state: IMicroFrontEndInfo) => {
   const actions: IMicroFrontEndActions = {
     initialize: (props: IMicroFrontEndProps) => {
       const initialData: IMicroFrontEndInfo = getMicroFrontEndDetails(
-        props.hostUrl,
-        props.hostName
+        props.hostName,
+        props.hostUrl
       );
       dispatch({ type: MICRO_FRONTEND_ACTIONS.INITIALIZE, data: initialData });
       return initialData;

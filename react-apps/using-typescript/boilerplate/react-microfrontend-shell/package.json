@@ -8,6 +8,7 @@
     "@types/react-dom": "^17.0.11",
     "axios": "^0.25.0",
     "react": "^17.0.2",
+    "react-app-rewired": "^2.1.11",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
@@ -38,9 +39,9 @@
     "prettier": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "lint-fix": "tsc --noEmit && eslint --quiet src/**/*.ts{,x} --fix",
     "lint": "tsc --noEmit && eslint --quiet src/**/*.ts{,x}",

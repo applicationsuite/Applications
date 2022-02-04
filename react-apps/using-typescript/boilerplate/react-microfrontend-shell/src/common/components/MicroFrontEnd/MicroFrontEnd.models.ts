@@ -12,19 +12,23 @@ export enum ScriptLoadStatus {
 export interface IMicroFrontEndProps {
   hostUrl: string;
   hostName: string;
-  userInfo: any;
   history: any;
-  data: any;
-  notify: (data: any) => void;
+  userInfo?: any;
+  data?: any;
+  notify?: (data: any) => void;
+  onLoadError?: (error: string) => void;
 }
 
-
 export interface IMicroFrontEndContext {
-  hostUrl: string;
-  hostName: string;
+  userInfo: any;
+  history: any;
+  data?: any;
+  notify?: (data: any) => void;
 }
 
 export interface IMicroFrontEndInfo {
+  hostUrl: string;
+  hostName: string;
   scriptId: string;
   scriptLoadStatus: ScriptLoadStatus;
   assetFile: string;
@@ -33,4 +37,5 @@ export interface IMicroFrontEndInfo {
   containerName: string;
   jsScriptName: string;
   cssScriptName: string;
+  error?: string;
 }
