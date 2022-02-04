@@ -19,4 +19,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/build/index.html'));
 });
 app.listen(5000);
-console.log('Server Started at port: 5000');
+console.log('Server Started at port: 5000. Use [CTRL + C] to stop');
