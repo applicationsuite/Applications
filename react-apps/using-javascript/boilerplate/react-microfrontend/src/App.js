@@ -4,14 +4,14 @@ import { Header, Home } from './common/components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //import { localizationData } from './resources/localization/localizationData';
 
-function App() {
+function App(props) {
   return (
     <div className="app">
       <Router>
-        <Header />
+      {props.showMenu && <Header />}
         <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/ModuleName" element={<Home />} />
+          <Route path="/ModuleName/Home" element={<Home />} />
         </Routes>
       </Router>
     </div>

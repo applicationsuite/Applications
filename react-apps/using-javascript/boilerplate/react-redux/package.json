@@ -12,7 +12,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "react-ui-common-controls": "^1.0.3",
+    "react-ui-common-controls": "^1.0.6",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
     "typescript": "^4.5.5",
@@ -45,7 +45,8 @@
     "eject": "react-scripts eject",
     "lint-fix": "tsc --noEmit && eslint --quiet src/**/*.ts{,x} --fix",
     "lint": "tsc --noEmit && eslint --quiet src/**/*.ts{,x}",
-    "format": "prettier --write src/**/*.ts{,x}"
+    "format": "prettier --write src/**/*.ts{,x}",
+    "serve": "serve -s build -p 3000"
   },
   "eslintConfig": {
     "extends": [

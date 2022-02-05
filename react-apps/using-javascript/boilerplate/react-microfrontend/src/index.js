@@ -4,12 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+window['renderModuleName'] = (containerId, contextData) => {
+  let elementToMount = document.getElementById(containerId);
+  ReactDOM.render(<App showMenu={false} />, elementToMount);
+};
+
+window['unmountModuleName'] = (containerId, contextData) => {
+  let elementToUnMount = document.getElementById(containerId);
+  ReactDOM.unmountComponentAtNode(elementToUnMount);
+};
+
+window['renderLocal'] = (containerId) => {
+  let elementToMount = document.getElementById(containerId);
+  ReactDOM.render(<App showMenu={true} />, elementToMount);
+};
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

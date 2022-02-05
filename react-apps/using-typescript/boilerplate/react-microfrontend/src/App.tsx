@@ -11,9 +11,8 @@ function App(props: any) {
       <Router>
         {props.showMenu && <Header />}
         <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<Home />} />
+          <Route path="/ModuleName" element={<Home />} />
+          <Route path="/ModuleName/Home" element={<Home />} />
         </Routes>
       </Router>
     </div>

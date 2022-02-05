@@ -42,7 +42,8 @@
     "eject": "react-scripts eject",
     "lint-fix": "tsc --noEmit && eslint --quiet src/**/*.ts{,x} --fix",
     "lint": "tsc --noEmit && eslint --quiet src/**/*.ts{,x}",
-    "format": "prettier --write src/**/*.ts{,x}"
+    "format": "prettier --write src/**/*.ts{,x}",
+    "serve": "serve -s build -p 3000"
   },
   "eslintConfig": {
     "extends": [
