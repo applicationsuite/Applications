@@ -1,0 +1,23 @@
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.banner-text {
+  position: absolute;
+  bottom: 80px;
+  left: 100px;
+  color: rgb(255, 255, 255);
+}
+.banner-text-home {
+  position: absolute;
+  bottom: 150px;
+  right: 300px;
+  color: rgb(78, 78, 70);
+}
+
+.form-container{
+   height: 150px;
+   width: 100%;
+   background-color: rgb(231, 231, 231);
+}

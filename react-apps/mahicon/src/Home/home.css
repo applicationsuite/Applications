@@ -1,0 +1,191 @@
+.button {
+  margin-left: 570px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.tel {
+  margin-right: 150px;
+  margin-top: 20px;
+}
+.top-header {
+  background-color: rgb(227, 19, 19);
+  height: 450px;
+  display: flex;
+  justify-content: space-between;
+}
+.top-heading {
+  text-align: center;
+  margin-top: 130px;
+  margin-left: 100px;
+  color: aliceblue;
+}
+
+.first {
+  font-weight: 300;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.second {
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 2px;
+}
+.third {
+  font-size: 20px;
+}
+
+.laptop-image {
+  margin-top: 210px;
+  margin-right: 200px;
+}
+
+.logo {
+  margin-left: 120px;
+  margin-top: 15px;
+}
+
+.ab {
+  font-weight: bold;
+}
+.cd {
+  margin-left: 5px;
+}
+
+.section-menu {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.start-button {
+  background-color: rgb(227, 19, 19);
+  border: none;
+  padding: 5px 15px;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.service {
+  text-align: center;
+  margin-top: 100px;
+}
+.section-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: inherit;
+  word-wrap: initial;
+  margin-top: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.icons-color {
+  color: red;
+  margin-right: 10px;
+}
+
+.parap {
+  margin-left: 40px;
+}
+.second-page {
+  margin-left: 30px;
+  font-weight: 400;
+}
+.third-page {
+  margin-left: 30px;
+  margin-right: 200px;
+}
+.first-page {
+  margin-left: 150px;
+}
+
+.section-middle {
+  background-color: rgb(227, 19, 19);
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.middle-logo {
+  margin-left: 150px;
+}
+.middle-heading {
+  margin-top: 20px;
+  margin-left: 200px;
+  color: white;
+  font-weight: 700;
+  font-size: 35px;
+}
+.middle-paragrap {
+  margin-top: 15px;
+  color: white;
+  font-size: 20px;
+}
+.middle-images {
+  margin-left: 350px;
+  margin-top: 60px;
+  background-color: rgb(227, 19, 19);
+}
+.imgs {
+  margin-right: 10px;
+}
+
+.section-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  height: 500px;
+  margin-top: 20px;
+}
+.first-image {
+  border-radius: 50%;
+  width: 10%;
+  margin-top: 80px;
+}
+.second-image {
+  border-radius: 50%;
+  width: 10%;
+  margin-top: 50px;
+}
+.third-image {
+  width: 10%;
+  border-radius: 50%;
+  margin-top: 100px;
+}
+
+.logo-imgs {
+  border-radius: 50%;
+  border: 2px solid gainsboro;
+  padding: 10px;
+}
+
+.four-image {
+  border-radius: 50%;
+  width: 27%;
+  margin-top: 30px;
+}
+.logo-imgs {
+  border-radius: 50%;
+  border: 2px solid gainsboro;
+  padding: 10px;
+}
+
+.text {
+  color: red;
+  font-size: 20px;
+  font-family: cursive;
+  margin-left: 50px;
+}
+
+.texts {
+  color: red;
+  font-size: 20px;
+  font-family: cursive;
+  margin-left: 150px;
+}
+.texte {
+  color: red;
+  font-size: 20px;
+  font-family: cursive;
+  margin-left: 85px;
+}

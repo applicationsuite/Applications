@@ -1,0 +1,18 @@
+.nav-link:hover {
+  background-color: rgb(227, 19, 19);
+  color: white;
+}
+
+.nav-link {
+  margin-left: 15px;
+}
+.nav-font {
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(119, 111, 102);
+}
+.nav-bar {
+  position: sticky;
+  top: 0;
+  background-color: rgb(241, 241, 241);
+}
