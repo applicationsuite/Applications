@@ -12,7 +12,7 @@ export function NavBar() {
         <nav>
           <div className="d-flex justify-content-between">
             <div className="mt-5 ms-5">
-              <h1>Mahicon</h1>
+              <h2>Mahicon</h2>
             </div>
             <div>
               <div className="mt-3 me-5" class="tel">
