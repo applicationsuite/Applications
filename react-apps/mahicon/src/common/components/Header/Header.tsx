@@ -8,7 +8,7 @@ import { Services } from "../../../Services";
 export const Header = () => {
   return (
     <>
-      <div className="container-fluid sticky-top">
+      <div className="container-fluid sticky-top bg-primary">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-dark p-0">
             <a href="index.html" className="navbar-brand">
@@ -78,10 +78,6 @@ export const Header = () => {
             </div>
           </nav>
         </div>
-      </div>
-
-      <div className="container-fluid pt-5 bg-primary hero-header">
-        <div className="container pt-5"></div>
       </div>
     </>
   );

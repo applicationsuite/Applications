@@ -15,11 +15,6 @@ export const About = () => {
                       Home
                     </a>
                   </li>
-                  <li className="breadcrumb-item">
-                    <a className="text-white" href="#">
-                      Pages
-                    </a>
-                  </li>
                   <li
                     className="breadcrumb-item text-white active"
                     aria-current="page"
@@ -33,8 +28,8 @@ export const About = () => {
         </div>
       </div>
 
-      <div className="container-fluid py-5">
-        <div className="container py-5">
+      <div className="container-fluid py-4">
+        <div className="container py-4">
           <div className="row g-5 align-items-center">
             {/* <div className="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
               <div className="about-img">
@@ -46,18 +41,25 @@ export const About = () => {
                 About Us
               </div>
               <h1 className="mb-4">
-                We Make Your Business Smarter with Artificial Intelligence
+                We Make Your Business Smarter with our expertise
               </h1>
+              <p></p>
               <p className="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
-                tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum
-                et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
-                justo et tempor eirmod magna dolore erat amet
+                We are young and growing with entrepreneurial spirits which help
+                us pave the master path for businesses and corporate hubs of all
+                sizes. We are highly skilled in web design, web development,
+                Mobile applications, GIS based applications and deploying
+                e-commerce platforms with vibrant flexibility and transparency
+                in technology. Not limiting to the same, we at Mahicon don’t go
+                by words, we research, strategize and deploy our services.
               </p>
               <p className="mb-4">
-                Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et
-                sit, sed stet no labore lorem sit. Sanctus clita duo justo et
-                tempor.
+                Mahicon specializes in Web Design, Mobile Apps development, SAP,
+                Salesforce, Security/GRC, Master Data Services, and S/4 HANA
+                migration and implementation. With our solutions, not only do we
+                make the migration process seamless, but also use our expertise
+                to re-engineer your business and make it more productive than
+                ever before.
               </p>
               <div className="row g-3">
                 <div className="col-sm-6">
@@ -81,9 +83,9 @@ export const About = () => {
                 </div>
               </div>
               <div className="d-flex align-items-center mt-4">
-                <a className="btn btn-primary rounded-pill px-4 me-3" href="">
+                {/* <a className="btn btn-primary rounded-pill px-4 me-3" href="">
                   Read More
-                </a>
+                </a> */}
                 <a className="btn btn-outline-primary btn-square me-3" href="">
                   <i className="fab fa-facebook-f"></i>
                 </a>
@@ -97,6 +99,12 @@ export const About = () => {
                   <i className="fab fa-linkedin-in"></i>
                 </a>
               </div>
+            </div>
+            <div
+              className="col-lg-4 text-center text-md-end wow fadeIn align-top"
+              data-wow-delay="0.5s"
+            >
+              <img className="img-fluid" src="aboutus.png" alt="" />
             </div>
           </div>
         </div>

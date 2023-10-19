@@ -5,24 +5,23 @@ export const Footer = () => {
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-              <a href="index.html" className="d-inline-block mb-3">
+              <a href="/" className="d-inline-block mb-3">
                 <h1 className="text-white">Mahicon</h1>
               </a>
               <p className="mb-0">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
-                tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum
-                et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
-                justo et tempor
+                Mahicon specializes in Web Design, Mobile Apps development, SAP,
+                Salesforce, Security/GRC, Master Data Services, and S/4 HANA
+                migration and implementation.
               </p>
             </div>
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
               <h5 className="text-white mb-4">Get In Touch</h5>
               <p>
-                <i className="fa fa-map-marker-alt me-3"></i>123 Street, New
-                York, USA
+                <i className="fa fa-map-marker-alt me-3"></i>Spuihof 15, 1316 EE
+                Almere The Netherlands
               </p>
               <p>
-                <i className="fa fa-phone-alt me-3"></i>+012 345 67890
+                <i className="fa fa-phone-alt me-3"></i>+31 687 848707
               </p>
               <p>
                 <i className="fa fa-envelope me-3"></i>support@mahicon.com

@@ -15,11 +15,6 @@ export const Services = () => {
                       Home
                     </a>
                   </li>
-                  <li className="breadcrumb-item">
-                    <a className="text-white" href="#">
-                      Pages
-                    </a>
-                  </li>
                   <li
                     className="breadcrumb-item text-white active"
                     aria-current="page"
@@ -34,13 +29,16 @@ export const Services = () => {
       </div>
       <div className="container-fluid bg-light">
         <div className="container py-5">
-          <div className="row g-5 align-items-center">
-            <div className="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-              <div className="btn btn-sm border rounded-pill text-primary px-3 mb-3">
+          <div className="row g-5">
+            <div
+              className="col-lg-5 wow fadeIn align-text-top"
+              data-wow-delay="0.1s"
+            >
+              <div className="btn btn-sm border rounded-pill text-primary px-3">
                 Our Services
               </div>
               <h1 className="mb-4">
-                Our Excellent AI Solutions for Your Business
+                We put in best services to achieve goals of our client
               </h1>
               <p className="mb-4">
                 Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
@@ -48,9 +46,9 @@ export const Services = () => {
                 et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
                 justo et tempor eirmod magna dolore erat amet
               </p>
-              <a className="btn btn-primary rounded-pill px-4" href="">
+              {/* <a className="btn btn-primary rounded-pill px-4" href="">
                 Read More
-              </a>
+              </a> */}
             </div>
             <div className="col-lg-7">
               <div className="row g-4">
@@ -61,14 +59,14 @@ export const Services = () => {
                         <div className="service-icon btn-square">
                           <i className="fa fa-home fa-2x"></i>
                         </div>
-                        <h5 className="mb-3">Robotic Automation</h5>
+                        <h5 className="mb-3">Web Design</h5>
                         <p>
-                          Erat ipsum justo amet duo et elitr dolor, est duo duo
-                          eos lorem sed diam stet diam sed stet lorem.
+                          We dynamically leverage existing synergistic systems
+                          where future-proof sources Synergistically formulate.
                         </p>
-                        <a className="btn px-3 mt-auto mx-auto" href="">
+                        {/* <a className="btn px-3 mt-auto mx-auto" href="">
                           Read More
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                     <div className="col-12 wow fadeIn" data-wow-delay="0.5s">
@@ -76,14 +74,15 @@ export const Services = () => {
                         <div className="service-icon btn-square">
                           <i className="fa fa-home fa-2x"></i>
                         </div>
-                        <h5 className="mb-3">Machine learning</h5>
+                        <h5 className="mb-3">Mobile App Development</h5>
                         <p>
-                          Erat ipsum justo amet duo et elitr dolor, est duo duo
-                          eos lorem sed diam stet diam sed stet lorem.
+                          We have deep technical expertise by helping startups
+                          and big brands adopt mobile-first approach. Having
+                          built world-class mobile solutions.
                         </p>
-                        <a className="btn px-3 mt-auto mx-auto" href="">
+                        {/* <a className="btn px-3 mt-auto mx-auto" href="">
                           Read More
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>
@@ -95,14 +94,19 @@ export const Services = () => {
                         <div className="service-icon btn-square">
                           <i className="fa fa-home fa-2x"></i>
                         </div>
-                        <h5 className="mb-3">Education & Science</h5>
+                        <h5 className="mb-3">
+                          SAP migration and implementation
+                        </h5>
                         <p>
-                          Erat ipsum justo amet duo et elitr dolor, est duo duo
-                          eos lorem sed diam stet diam sed stet lorem.
+                          SAP is one of the widely used ERP software across the
+                          large or medium size enterprises because of its
+                          excellent integrated business processes and friendly
+                          user experience. You can access your business data and
+                          processes easily at one place.
                         </p>
-                        <a className="btn px-3 mt-auto mx-auto" href="">
+                        {/* <a className="btn px-3 mt-auto mx-auto" href="">
                           Read More
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                     <div className="col-12 wow fadeIn" data-wow-delay="0.7s">
@@ -110,14 +114,18 @@ export const Services = () => {
                         <div className="service-icon btn-square">
                           <i className="fa fa-home fa-2x"></i>
                         </div>
-                        <h5 className="mb-3">Predictive Analysis</h5>
+                        <h5 className="mb-3">Salesforce</h5>
                         <p>
-                          Erat ipsum justo amet duo et elitr dolor, est duo duo
-                          eos lorem sed diam stet diam sed stet lorem.
+                          Salesforce data migration is one of the most
+                          challenging projects, and will differ depending on the
+                          size, format, and accuracy of the source data. Data
+                          migration is the process of transferring data from one
+                          system to another, however, the work required before
+                          the actual transfer is the most complex part.
                         </p>
-                        <a className="btn px-3 mt-auto mx-auto" href="">
+                        {/* <a className="btn px-3 mt-auto mx-auto" href="">
                           Read More
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>

@@ -15,11 +15,6 @@ export const Career = () => {
                       Home
                     </a>
                   </li>
-                  <li className="breadcrumb-item">
-                    <a className="text-white" href="#">
-                      Pages
-                    </a>
-                  </li>
                   <li
                     className="breadcrumb-item text-white active"
                     aria-current="page"
@@ -28,6 +23,34 @@ export const Career = () => {
                   </li>
                 </ol>
               </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid py-4">
+        <div className="container py-4">
+          <div className="row g-5 align-items-center">
+            {/* <div className="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <div className="about-img">
+                <img className="img-fluid" src="about-img.jpg" />
+              </div>
+            </div> */}
+            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <div className="btn btn-sm border rounded-pill text-primary px-3 mb-3">
+                Career
+              </div>
+              <h1 className="mb-4">We Can Help You Succeed</h1>
+              <p></p>
+              <p className="mb-4">
+                We seek people who look at problems as opportunities and are not
+                shy of challenges. Email your CV to hr@mahicon.com
+              </p>
+            </div>
+            <div
+              className="col-lg-6 text-center text-md-end wow fadeIn align-top"
+              data-wow-delay="0.5s"
+            >
+              <img className="img-fluid" src="jobsearch.png" alt="" />
             </div>
           </div>
         </div>

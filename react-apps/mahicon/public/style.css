@@ -55,13 +55,32 @@ h6,
 }
 
 .btn-sm-square {
-  width: 32px;
+  width: 40px;
   height: 32px;
 }
 
 .btn-lg-square {
   width: 48px;
   height: 48px;
+}
+
+.btn-square-chooseus-1 {
+  width: 63px;
+}
+.btn-square-chooseus-2 {
+  width: 40px;
+}
+.btn-square-chooseus-3 {
+  width: 50px;
+}
+.btn-square-chooseus-4 {
+  width: 66px;
+}
+.btn-square-chooseus-5 {
+  width: 35px;
+}
+.btn-square-chooseus-6 {
+  width: 63px;
 }
 
 .btn-square,
@@ -83,7 +102,7 @@ h6,
 
 .navbar {
   padding: 11px 0 !important;
-  height: 75px;
+  height: 100px;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -527,4 +546,8 @@ h6,
   height: 70px;
   width: 150px;
   margin: 5px;
+}
+
+.align-top {
+  margin-top: 10%;
 }
