@@ -9,7 +9,7 @@ export const Home = () => {
                 Empowering Businesses through Technology for a Smarter Future
               </h1>
               <p className="text-white mb-4 animated slideInRight">
-                We specializes in Web Design, Mobile Apps development, SAP,
+                We are specialized in Web Design, Mobile Apps development, SAP,
                 Salesforce, Security/GRC, Master Data Services, and S/4 HANA
                 migration and implementation.
               </p>
